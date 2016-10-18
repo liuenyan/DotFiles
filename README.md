@@ -12,7 +12,7 @@
 
 ### 一些 zsh 主题资源
 
-- [bullet-train](https://github.com/robbyrussell/oh-my-zsh) 漂亮的子弹列车主题。
+- [bullet-train](https://github.com/caiogondim/bullet-train-oh-my-zsh-theme) 漂亮的子弹列车主题。
 
 ## emacs
 
