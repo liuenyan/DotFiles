@@ -1,0 +1,7 @@
+[user]
+	email = liu.enyan@gmail.com
+	name = Enyan Liu
+[push]
+	default = simple
+[diff]
+	tool = gvimdiff
