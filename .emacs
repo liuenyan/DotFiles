@@ -34,6 +34,8 @@
 (setq display-time-day-and-date t)
 ;;把fill-column设置为80便于阅读
 (setq default-fill-column 80)
+;;设置默认字体
+(set-default-font "Droid Sans Mono-12")
 ;;默认风格
 (setq c-default-style "bsd")
 ;;tab缩进
