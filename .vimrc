@@ -103,6 +103,11 @@ set hlsearch
 set autoindent
 set smartindent
 
+"" 设置 80 列标尺
+set textwidth=78
+set colorcolumn=+2
+highlight ColorColumn ctermbg=gray
+
 "" 缩进相关
 set expandtab
 set tabstop=4
