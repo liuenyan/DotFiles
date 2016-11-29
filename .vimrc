@@ -102,6 +102,7 @@ set number
 set hlsearch
 set autoindent
 set smartindent
+set backspace=indent,eol,start
 
 "" 设置 80 列标尺
 set textwidth=78
@@ -128,6 +129,9 @@ let g:ycm_confirm_extra_conf=0
 
 "" clang_complete 设置 (libclang.so 所在的路径)
 "" let g:clang_library_path='/usr/lib64/llvm/'
+
+"" delimitMate 设置
+let delimitMate_expand_cr=1
 
 "" 快捷键设置
 map <F2> :NERDTreeToggle<cr>
