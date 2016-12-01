@@ -81,6 +81,12 @@ source $VIMRUNTIME/ftplugin/man.vim
 syntax enable
 syntax on
 
+"" 禁用方向键
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 if has("gui_running")
     colorscheme molokai
     set guifont=Droid\ Sans\ Mono\ 11
