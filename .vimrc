@@ -8,7 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -98,6 +98,7 @@ else
     "solarized
     "set t_Co=256
     "let g:solarized_termcolors=256
+    "let g:solarized_termtrans=1
     "set background=dark
     "colorscheme solarized
 endif
@@ -137,7 +138,7 @@ let g:ycm_confirm_extra_conf=0
 "" let g:clang_library_path='/usr/lib64/llvm/'
 
 "" delimitMate 设置
-let delimitMate_expand_cr=1
+let g:delimitMate_expand_cr=1
 
 "" 快捷键设置
 map <F2> :NERDTreeToggle<cr>
