@@ -28,13 +28,15 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'trusktr/seti.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " ---------------------------------------------------
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'a.vim'
 " Plugin 'taglist.vim'
 Plugin 'bufexplorer.zip'
-Plugin 'The-NERD-Tree'
+" Plugin 'The-NERD-Tree'
 " Plugin 'minibufexpl.vim'
 " Plugin 'OmniCppComplete'
 " Plugin 'winmanager'
@@ -77,7 +79,8 @@ augroup resCur
     autocmd BufReadPost * call setpos(".", getpos("'\""))
 augroup END
 
-source $VIMRUNTIME/ftplugin/man.vim
+runtime ftplugin/man.vim
+
 syntax enable
 syntax on
 
