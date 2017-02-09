@@ -5,3 +5,5 @@
 	default = simple
 [diff]
 	tool = gvimdiff
+[core]
+	autocrlf = input
