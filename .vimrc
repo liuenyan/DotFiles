@@ -57,6 +57,7 @@ Plugin 'bufexplorer.zip'
 " ---------------------------------------------------
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
+Plugin 'dracula/vim', {'name': 'dracula_vim_theme'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,6 +125,10 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
+"" 设置 vim-airline
+set laststatus=2
+let g:airline_powerline_fonts=1
 
 "" 设置YouCompleteMe
 let g:ycm_global_extra_conf='~/.ycm_extra_conf.py'
