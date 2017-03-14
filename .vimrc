@@ -120,6 +120,10 @@ set textwidth=78
 set colorcolumn=+2
 highlight ColorColumn ctermbg=gray
 
+" 设置 Ex 命令行补全
+set wildmenu
+set wildmode=full
+
 "" 缩进相关
 set expandtab
 set tabstop=4
