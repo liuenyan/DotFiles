@@ -86,7 +86,11 @@ augroup resCur
 augroup END
 
 runtime ftplugin/man.vim
-"set keywordprg=:Man
+if v:version < 800
+    set keywordprg=man
+else
+    set keywordprg=:Man
+endif
 
 syntax enable
 syntax on
@@ -96,7 +100,6 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
 
 if has("gui_running")
     colorscheme molokai
@@ -170,7 +173,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:delimitMate_expand_cr=1
 
 "" 快捷键设置
+let mapleader=","
 map <F2> :NERDTreeToggle<cr>
 map <F3> :BufExplorer<cr>
 nmap <F4> :TagbarToggle<cr>
+noremap <Leader>jd :YcmCompleter GoTo<cr>
 
