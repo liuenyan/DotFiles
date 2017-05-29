@@ -21,7 +21,7 @@ Plugin 'altercation/vim-colors-solarized'
 " Plugin 'Rip-Rip/clang_complete'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'editorconfig/editorconfig-vim'
@@ -30,6 +30,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'trusktr/seti.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'rust-lang/rust.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
+Plugin 'honza/vim-snippets'
 " ---------------------------------------------------
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
@@ -81,6 +86,7 @@ augroup resCur
 augroup END
 
 runtime ftplugin/man.vim
+"set keywordprg=:Man
 
 syntax enable
 syntax on
@@ -90,6 +96,7 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
 
 if has("gui_running")
     colorscheme molokai
@@ -137,6 +144,16 @@ let g:airline_powerline_fonts=1
 "" 设置YouCompleteMe
 let g:ycm_global_extra_conf='~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
+
+"" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 "" taglist设置
 "let Tlist_Show_One_File=1
