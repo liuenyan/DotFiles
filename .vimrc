@@ -95,7 +95,6 @@ else
 endif
 
 syntax enable
-syntax on
 
 "" 禁用方向键
 noremap <Up> <Nop>
@@ -103,23 +102,26 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-if has("gui_running")
-    colorscheme molokai
-    set guifont=Droid\ Sans\ Mono\ 11
-else
-    colorscheme desert
-    "molokai
-    "colorscheme molokai
-    "set t_Co=256
-    "solarized
-    "set t_Co=256
-    "let g:solarized_termcolors=256
-    "let g:solarized_termtrans=1
-    "set background=dark
-    "colorscheme solarized
+set t_Co=256
+
+" solarized theme
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+set background=light
+colorscheme solarized
+
+"" molokai
+" let g:molokai_original=1
+" colorscheme molokai
+
+if has("mouse")
+    set mouse=a
 endif
 
-set mouse=a
+if has('unnamedplus')
+    set clipboard=unnamed,unnamedplus
+endif
+
 set fileencodings=utf8,gbk,cp936
 set number
 set hlsearch
