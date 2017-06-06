@@ -85,6 +85,8 @@ augroup resCur
     autocmd BufReadPost * call setpos(".", getpos("'\""))
 augroup END
 
+autocmd FileType help,man wincmd H
+
 runtime ftplugin/man.vim
 if v:version < 800
     set keywordprg=man
@@ -139,6 +141,8 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+ 
+set listchars=tab:▸\ ,eol:¬
 
 "" 设置 vim-airline
 set laststatus=2
