@@ -16,18 +16,15 @@ Plugin 'VundleVim/Vundle.vim'
 " ---------------------------------------------------
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
-" Plugin 'Rip-Rip/clang_complete'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Rip-Rip/clang_complete'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'trusktr/seti.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'rust-lang/rust.vim'
@@ -35,12 +32,22 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'rakr/vim-one'
+"Plugin 'joshdick/onedark.vim'
+Plugin 'trusktr/seti.vim'
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'NLKNguyen/papercolor-theme'
 " ---------------------------------------------------
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'a.vim'
 " Plugin 'taglist.vim'
-Plugin 'bufexplorer.zip'
 " Plugin 'The-NERD-Tree'
 " Plugin 'minibufexpl.vim'
 " Plugin 'OmniCppComplete'
@@ -79,29 +86,38 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+syntax enable
+
 ""记录上一次的光标位置
 augroup resCur
     autocmd!
     autocmd BufReadPost * call setpos(".", getpos("'\""))
 augroup END
 
-autocmd FileType help,man wincmd H
-
 runtime ftplugin/man.vim
+
 if v:version < 800
     set keywordprg=man
 else
     set keywordprg=:Man
 endif
 
-syntax enable
+if has("mouse")
+    set mouse=a
+endif
 
-"" 禁用方向键
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+if has('unnamedplus')
+    set clipboard=unnamed,unnamedplus
+endif
 
+"if has('termguicolors')
+"    set termguicolors
+"endif
+
+"cabbrev help tab help
+
+autocmd FileType help,man wincmd H
+autocmd FileType markdown,text,tex setlocal spell spelllang=en,cjk
 set t_Co=256
 
 " solarized theme
@@ -111,16 +127,13 @@ set background=light
 colorscheme solarized
 
 "" molokai
-" let g:molokai_original=1
-" colorscheme molokai
+"let g:molokai_original=1
+"colorscheme molokai
 
-if has("mouse")
-    set mouse=a
-endif
+"colorscheme dracula
+"colorscheme desert
+"colorscheme one
 
-if has('unnamedplus')
-    set clipboard=unnamed,unnamedplus
-endif
 
 set fileencodings=utf8,gbk,cp936
 set number
@@ -143,8 +156,11 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
- 
+
 set listchars=tab:▸\ ,eol:¬
+
+"" 设置折叠
+"set foldmethod=syntax
 
 "" 设置 vim-airline
 set laststatus=2
@@ -163,6 +179,9 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" tagbar
+let g:tagbar_width=30
 
 "" taglist设置
 "let Tlist_Show_One_File=1
@@ -185,3 +204,8 @@ map <F3> :BufExplorer<cr>
 nmap <F4> :TagbarToggle<cr>
 noremap <Leader>jd :YcmCompleter GoTo<cr>
 
+"" 禁用方向键
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
