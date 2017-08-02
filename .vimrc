@@ -20,6 +20,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 "Plugin 'Rip-Rip/clang_complete'
 "Plugin 'Valloric/YouCompleteMe'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'editorconfig/editorconfig-vim'
@@ -32,17 +33,20 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/vimshell.vim'
+"Plugin 'Shougo/vimproc.vim'
+"Plugin 'Shougo/vimshell.vim'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'airblade/vim-gitgutter'
 "Plugin 'rakr/vim-one'
 "Plugin 'joshdick/onedark.vim'
 Plugin 'trusktr/seti.vim'
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'morhetz/gruvbox'
-Plugin 'w0ng/vim-hybrid'
+"Plugin 'morhetz/gruvbox'
+"Plugin 'w0ng/vim-hybrid'
 Plugin 'NLKNguyen/papercolor-theme'
+"Plugin 'flazz/vim-colorschemes'
 " ---------------------------------------------------
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
@@ -110,14 +114,15 @@ if has('unnamedplus')
     set clipboard=unnamed,unnamedplus
 endif
 
-"if has('termguicolors')
-"    set termguicolors
-"endif
+if has('termguicolors')
+    set termguicolors
+endif
 
 "cabbrev help tab help
-
-autocmd FileType help,man wincmd H
+"autocmd FileType help,man wincmd H
 autocmd FileType markdown,text,tex setlocal spell spelllang=en,cjk
+autocmd BufWrite * :Autoformat
+
 set t_Co=256
 
 " solarized theme
@@ -132,8 +137,14 @@ colorscheme solarized
 
 "colorscheme dracula
 "colorscheme desert
-"colorscheme one
 
+" paper color colorscheme
+"colorscheme PaperColor
+"set background=light
+"let g:airline_theme='papercolor'
+
+"colorscheme gruvbox
+"let g:gruvbox_termcolors=256
 
 set fileencodings=utf8,gbk,cp936
 set number
@@ -157,7 +168,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+set list
 set listchars=tab:▸\ ,eol:¬
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
 
 "" 设置折叠
 "set foldmethod=syntax
@@ -182,6 +196,11 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " tagbar
 let g:tagbar_width=30
+
+" indent guide lines
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 "" taglist设置
 "let Tlist_Show_One_File=1
