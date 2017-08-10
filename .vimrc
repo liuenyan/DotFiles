@@ -219,11 +219,13 @@ let g:delimitMate_expand_cr=1
 
 "" 快捷键设置
 let mapleader=","
-map <F2> :NERDTreeToggle<cr>
-map <F3> :BufExplorer<cr>
-nmap <F4> :TagbarToggle<cr>
+noremap <F2> :NERDTreeToggle<cr>
+noremap <F3> :BufExplorer<cr>
+nnoremap <F4> :TagbarToggle<cr>
 noremap <Leader>jd :YcmCompleter GoTo<cr>
 noremap <Leader>f :Autoformat<cr>
+noremap <Leader>t :!ctags -R<cr>
+
 
 "" 禁用方向键
 noremap <Up> <Nop>
