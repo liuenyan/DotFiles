@@ -121,7 +121,7 @@ endif
 "cabbrev help tab help
 "autocmd FileType help,man wincmd H
 autocmd FileType markdown,text,tex setlocal spell spelllang=en,cjk
-autocmd BufWrite * :Autoformat
+"autocmd BufWrite * :Autoformat
 
 set t_Co=256
 
@@ -187,6 +187,7 @@ let g:ycm_confirm_extra_conf=0
 "" make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_key_invoke_completion = '<C-a>'
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "" better key bindings for UltiSnipsExpandTrigger
@@ -222,6 +223,7 @@ map <F2> :NERDTreeToggle<cr>
 map <F3> :BufExplorer<cr>
 nmap <F4> :TagbarToggle<cr>
 noremap <Leader>jd :YcmCompleter GoTo<cr>
+noremap <Leader>f :Autoformat<cr>
 
 "" 禁用方向键
 noremap <Up> <Nop>
