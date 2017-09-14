@@ -20,6 +20,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 "Plugin 'Rip-Rip/clang_complete'
 "Plugin 'Valloric/YouCompleteMe'
+Plugin 'fatih/vim-go'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
@@ -47,6 +48,7 @@ Plugin 'altercation/vim-colors-solarized'
 "Plugin 'w0ng/vim-hybrid'
 Plugin 'NLKNguyen/papercolor-theme'
 "Plugin 'flazz/vim-colorschemes'
+
 " ---------------------------------------------------
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
@@ -114,13 +116,20 @@ if has('unnamedplus')
     set clipboard=unnamed,unnamedplus
 endif
 
-if has('termguicolors')
-    set termguicolors
-endif
+"if has('termguicolors')
+"    set termguicolors
+"endif
+
+"" 缩进相关
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 "cabbrev help tab help
 "autocmd FileType help,man wincmd H
 autocmd FileType markdown,text,tex setlocal spell spelllang=en,cjk
+autocmd FileType go setlocal noexpandtab
 "autocmd BufWrite * :Autoformat
 
 set t_Co=256
@@ -161,12 +170,6 @@ highlight ColorColumn ctermbg=gray
 " 设置 Ex 命令行补全
 set wildmenu
 set wildmode=full
-
-"" 缩进相关
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 
 set list
 set listchars=tab:▸\ ,eol:¬
